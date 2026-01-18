@@ -57,7 +57,9 @@ define('RL_PLUGINS', RL_ROOT . 'plugins' . RL_DS);
 define('RL_CACHE', RL_TMP . 'cache_381150225' . RL_DS);
 
 // system URLs
-define('RL_URL_HOME', getenv('APP_URL') ?: 'https://booking.gmoplus.com/');
+$app_url = getenv('APP_URL') ?: 'https://booking.gmoplus.com/';
+$app_url = rtrim($app_url, '/') . '/'; // Ensure trailing slash
+define('RL_URL_HOME', $app_url);
 define('RL_FILES_URL', RL_URL_HOME . 'files/');
 define('RL_LIBS_URL', RL_URL_HOME . 'libs/');
 define('RL_PLUGINS_URL', RL_URL_HOME . 'plugins/');
