@@ -1,0 +1,7 @@
+/tmp/*
+/error_log
+/backup/*
+.DS_Store
+Thumbs.db
+.idea
+.vscode
