@@ -28,7 +28,7 @@
                     channelUrl : '{/literal}{$config.bookmarks_fb_box_url}{literal}',   // Channel file for x-domain comms
                     status     : true,                                                  // Check Facebook Login status
                     xfbml      : true,                                                  // Look for social plugins on the page
-                    version    : 'v2.2'
+                    version    : 'v18.0'
                 });
 
                 FB.Event.subscribe('xfbml.render',
@@ -44,7 +44,7 @@
             var js, fjs = d.getElementsByTagName(s)[0];
             if (d.getElementById(id)) {return;}
             js = d.createElement(s); js.id = id;
-            js.src = "//connect.facebook.net/en_US/all.js";
+            js.src = "https://connect.facebook.net/en_US/sdk.js";
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
     });
