@@ -7,7 +7,9 @@ WORKDIR /app
 COPY . /app
 
 # Create required directories and set permissions
-RUN mkdir -p /app/tmp/compile /app/tmp/cache /app/tmp/upload /app/files \
+# Frontend uses: tmp/compile, tmp/cache, tmp/upload
+# Admin uses: tmp/aCompile
+RUN mkdir -p /app/tmp/compile /app/tmp/aCompile /app/tmp/cache /app/tmp/upload /app/files \
     && chmod -R 777 /app/tmp \
     && chmod -R 755 /app/files \
     && chown -R www-data:www-data /app

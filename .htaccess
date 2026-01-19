@@ -154,8 +154,14 @@ RewriteRule .* - [F,L]
     Allow from All
 </Limit>
 
+# Exclude source map files from rewrite - return 404 if not found
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_URI} \.(map)$ [NC]
+RewriteRule .* - [R=404,L]
+
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_URI} ^/templates
+RewriteCond %{REQUEST_URI} !\.(map)$ [NC]
 RewriteRule templates\/(.*?\/)(.*)$ templates/template_core/$2 [L]
 
 RewriteCond %{REQUEST_FILENAME} -d [OR]
